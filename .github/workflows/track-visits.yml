@@ -1,0 +1,31 @@
+name: Track Page Visits
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  process-visit:
+    if: contains(github.event.issue.labels.*.name, 'page-visit')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Process Visit Data
+        run: |
+          echo "Processing visit data from issue #${{ github.event.issue.number }}"
+          echo "Visit details:"
+          echo "${{ github.event.issue.body }}"
+          
+      - name: Update Visit Summary
+        run: |
+          # Create or update a summary file
+          echo "Total Visits: ${{ github.event.issue.number }}" >> visit-summary.txt
+          echo "Last Visit: ${{ github.event.issue.created_at }}" >> visit-summary.txt
+          echo "----------------------------------------" >> visit-summary.txt
+          
+      - name: Commit Summary
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add visit-summary.txt
+          git commit -m "Update visit summary"
+          git push 

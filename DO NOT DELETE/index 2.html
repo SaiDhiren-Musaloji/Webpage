@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Dhiren Musaloji</title>
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --apple-blue: #0071e3;
+            --apple-dark: #1d1d1f;
+            --apple-light: #f5f5f7;
+            --apple-gray: #86868b;
+            --zoom-scale: 1.05;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--apple-light);
+            color: var(--apple-dark);
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .hero-text h1 {
+            color: var(--apple-dark);
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .hero-text p {
+            color: var(--apple-blue);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 8px 0 0 0;
+        }
+
+        /* Introduction Section */
+        .intro {
+            background-color: white;
+            padding: 24px;
+            border-radius: 18px;
+            max-width: 800px;
+            margin: 0 auto 48px auto;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin: 48px 0 24px 0;
+            color: var(--apple-dark);
+            font-size: 2rem;
+            font-weight: 600;
+            transition: color var(--transition-speed) ease;
+            position: relative;
+        }
+
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--apple-blue);
+            transition: width 0.3s ease;
+        }
+
+        .section-header:hover {
+            color: var(--apple-blue);
+        }
+
+        .section-header:hover::after {
+            width: 100px;
+        }
+
+        .section-header:hover::after {
+            width: 100px;
+        }
+
+        .subsection-header {
+            text-align: center;
+            margin: 32px 0 16px 0;
+            color: var(--apple-dark);
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: color var(--transition-speed) ease;
+            position: relative;
+        }
+
+        .subsection-header::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--apple-blue);
+            transition: width 0.3s ease;
+        }
+
+        .subsection-header:hover {
+            color: var(--apple-blue);
+        }
+
+        .subsection-header:hover::after {
+            width: 80px;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 24px 0;
+        }
+
+        .card {
+            background-color: white;
+            padding: 24px;
+            border-radius: 18px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(0, 113, 227, 0.1));
+            opacity: 0;
+            transition: opacity var(--transition-speed) ease;
+        }
+
+        .card:hover {
+            transform: scale(var(--zoom-scale));
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover::before {
+             opacity: 1;
+        }
+
+        .card h3 {
+            color: var(--apple-blue);
+            margin-bottom: 16px;
+        }
+
+        .card p {
+            color: var(--apple-dark);
+            margin-bottom: 8px;
+        }
+
+        .card .secondary {
+            color: var(--apple-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Experience Section */
+        .experience-card {
+            background-color: white;
+            padding: 24px;
+            border-radius: 18px;
+            margin: 24px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+        }
+
+        .experience-card:hover {
+            transform: scale(var(--zoom-scale));
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        /* Projects Section */
+        .project-scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 32px;
+            padding: 24px 0;
+            position: relative; /* For positioning the scroll buttons */
+            margin-bottom: 16px; /* Space for scrollbar */
+        }
+
+        /* Custom Scrollbar */
+        .project-scroll-container::-webkit-scrollbar {
+            height: 2px;
+            display: block;
+        }
+
+        .project-scroll-container::-webkit-scrollbar-track {
+            background: rgba(245, 245, 247, 0.3);
+            border-radius: 4px;
+        }
+
+        .project-scroll-container::-webkit-scrollbar-thumb {
+            background: rgba(0, 113, 227, 0.3);
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .project-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 113, 227, 0.6);
+        }
+
+        /* Firefox scrollbar */
+        .project-scroll-container {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 113, 227, 0.3) rgba(245, 245, 247, 0.3);
+        }
+
+        /* Scroll Buttons */
+        .scroll-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .scroll-button:hover {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .scroll-button.left {
+            left: 0;
+        }
+
+        .scroll-button.right {
+            right: 0;
+        }
+
+        .scroll-button i {
+            color: var(--apple-blue);
+            font-size: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .scroll-button {
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        .project-card {
+            min-width: 340px;
+            max-width: 380px;
+            flex: 0 0 auto;
+            background: #f5fafd;
+            border-radius: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            padding: 32px 24px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box; /* Include padding/border in height */
+        }
+        .project-card .project-content {
+            opacity: 1;
+            transition: none;
+            padding: 0;
+            pointer-events: auto;
+            overflow-y: auto;
+            margin-top: 16px;
+        }
+        .project-card .project-title {
+            margin: 16px 0 0 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--apple-blue);
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .project-card {
+                min-width: 80vw;
+                max-width: 90vw;
+                padding: 20px 10px;
+            }
+        }
+
+        /* Profile Image */
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--apple-blue);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(var(--zoom-scale));
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 24px;
+            border-radius: 18px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .contact-form:hover {
+            transform: scale(var(--zoom-scale));
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--apple-dark);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d2d2d7;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--apple-blue);
+            box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+            transform: translateZ(20px) scale(1.02);
+        }
+
+        .submit-button {
+            background-color: var(--apple-blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        .submit-button:hover {
+            background-color: #005bbf;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);
+        }
+
+        .submit-button:active {
+            transform: translateY(0);
+        }
+
+        /* Links */
+        a {
+            color: var(--apple-blue);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Image Container */
+        .image-container {
+            position: relative;
+            background-color: #f5f5f7;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            min-height: 200px;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .image-container:hover {
+            transform: scale(var(--zoom-scale));
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Image Error Message */
+        .image-error {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #0071e3, #42a1ec);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            min-height: 200px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project-card {
+                flex-direction: column;
+            }
+
+            .project-image {
+                max-width: 100%;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Disable zoom effects on mobile */
+            .card:hover, 
+            .experience-card:hover, 
+            .project-card:hover,
+            .profile-image:hover,
+            .contact-form:hover,
+            .section-header:hover {
+                transform: none;
+            }
+        }
+
+        /* Add loading state styles */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            min-height: 200px;
+            background: #f5f5f7;
+            color: var(--apple-gray);
+            font-size: 14px;
+        }
+
+        /* View Counter */
+        .view-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--apple-blue);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .view-counter:hover {
+            opacity: 1;
+        }
+
+        /* Download Resume Button */
+        .download-resume {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--apple-blue);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 24px auto;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-resume:hover {
+            background-color: #005bbf;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);
+        }
+
+        .download-resume:active {
+            transform: translateY(0);
+        }
+
+        .download-resume svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Contact Details Section */
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin: 32px 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--apple-dark);
+            transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+        }
+
+        .contact-icon:hover {
+            transform: scale(var(--zoom-scale));
+            color: var(--apple-blue);
+        }
+
+        .contact-icon i {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .contact-icon span {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .contact-details {
+                gap: 16px;
+            }
+            
+            .contact-icon:hover {
+                transform: none;
+            }
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 300px;
+            height: 200px; /* Increased height */
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 0 auto;
+            flex-shrink: 0; /* Prevents shrinking */
+            flex-grow: 0;   /* Prevents growing beyond content or explicit size */
+            position: relative;
+            box-sizing: border-box; /* Include padding/border in height */
+            background-color: #f5f5f7; /* Light background for image container */
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Changed from cover to contain to prevent cropping */
+            display: block;
+            position: absolute; /* Added for absolute positioning */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto; /* Centers the image if it doesn't perfectly fill the space */
+            padding: 10px; /* Add some padding around the image */
+        }
+    </style>
+</head>
+<body>
+    <!-- Add view counter element -->
+    <div class="view-counter" id="viewCounter">
+        Views: Loading...
+    </div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="profile-image">
+                    <img src="images/profile.png" alt="Sai Dhiren Musaloji">
+                </div>
+                <div class="hero-text">
+                    <h1>Sai Dhiren Musaloji</h1>
+                    <p>Data Scientist & AI Engineer</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="intro">
+            <p>
+                Graduate student with advanced knowledge in Machine Learning, Deep Learning, Data Analytics, and Cloud AI. 
+                Azure Certified Data Scientist & AI Engineer with demonstrated experience through internships and technical projects.
+                <br><br>
+                Passion for deploying scalable AI solutions to drive innovation in technology and business.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <h2 class="section-header">Skills at a Glance</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Machine Learning</h3>
+                <p>• Deep Learning</p>
+                <p>• Neural Networks</p>
+                <p>• Computer Vision</p>
+            </div>
+            <div class="card">
+                <h3>Data Science</h3>
+                <p>• Data Analytics</p>
+                <p>• Statistical Analysis</p>
+                <p>• Big Data Processing</p>
+            </div>
+            <div class="card">
+                <h3>Cloud & Tools</h3>
+                <p>• Azure Cloud</p>
+                <p>• AWS Services</p>
+                <p>• Python/R/SQL</p>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <h1 class="section-header">About Me</h1>
+        <div class="card">
+            <p>
+                I'm a Data Scientist and AI Engineer with a passion for solving complex problems using advanced analytics and artificial intelligence. 
+                With a Master's degree in Data Science from the New Jersey Institute of Technology, I combine strong technical expertise with a keen eye for detail and pattern recognition.
+                <br><br>
+                My technical journey spans machine learning, deep learning, and cloud AI technologies, with a focus on building scalable solutions that deliver real business value.
+                I'm particularly interested in natural language processing, computer vision, and the ethical implementation of AI systems.
+                <br><br>
+                When I'm not coding or analyzing data, I enjoy staying updated with the latest developments in AI research and contributing to open-source projects.
+            </p>
+        </div>
+
+        <!-- Download Resume Button -->
+        <div style="text-align: center; margin: 32px 0;">
+            <a href="Resume.pdf" download class="download-resume">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                </svg>
+                Download Resume
+            </a>
+        </div>
+
+        <!-- Education Section -->
+        <h2 class="subsection-header">Education</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>New Jersey Institute of Technology</h3>
+                <p>MS in Data Science</p>
+                <p class="secondary">GPA: 3.85/4</p>
+                <p class="secondary">2023 - 2025</p>
+            </div>
+            <div class="card">
+                <h3>Mahatma Gandhi Institute of Technology</h3>
+                <p>B.Tech in Electronics and Communication Engineering</p>
+                <p class="secondary">GPA: 7/10</p>
+                <p class="secondary">2019 - 2023</p>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <h1 class="section-header">Professional Experience</h1>
+        <div class="experience-card">
+            <div class="experience-header">
+                <h3>AI Engineer Intern</h3>
+                <span class="secondary">Oct 2023 - Jan 2024</span>
+            </div>
+            <h4>Tech Mahindra, Makers Lab | Pune, Maharashtra</h4>
+            <p>
+                • Collaborated on development of an Indigenous Large Language Model (LLM) for Project Indus,
+                gaining hands-on experience with transformer architectures and advanced NLP techniques across 15+
+                Indian languages, including comprehensive linguistic data analysis and preprocessing methodologies.
+                <br><br>
+                • Implemented ethical data preprocessing techniques involving normalization, noise reduction, and
+                feature extraction, utilizing cutting-edge neural network architectures to enhance model performance
+                and develop a deep understanding of large-scale language model development.
+            </p>
+        </div>
+
+        <!-- Projects Section -->
+        <h1 class="section-header">Featured Projects</h1>
+        <div style="position: relative;">
+            <button class="scroll-button left" id="scrollLeft">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="project-scroll-container" id="projectScrollContainer">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/deep_learning.png" alt="Deep Learning Project">
+                    </div>
+                    <div class="project-title">Advanced Neural Network Architectures</div>
+                    <div class="project-content">
+                        <p>
+                            Architected and refined diverse neural network architectures (DNN/GNN) for classification and
+                            time-series forecasting, skillfully enhancing model accuracy through rigorous hyperparameter tuning and
+                            cross-validation.<br><br>
+                            Engineered cutting-edge AI systems using GANs and diffusion models for image synthesis, leveraging
+                            distributed TensorFlow implementations to boost computational efficiency.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/traffic_forecasting.png" alt="Traffic Forecasting Project">
+                    </div>
+                    <div class="project-title">Ensemble Traffic Forecasting System</div>
+                    <div class="project-content">
+                        <p>
+                            Developed a sophisticated ensemble learning framework combining ARIMA, LSTM, and Graph Neural Networks for urban traffic prediction using the PEMS-BAY dataset.<br><br>
+                            Applied graph construction techniques and dimensionality reduction methods to handle 325 traffic sensors, focusing analysis on 20 strategically selected locations across the San Francisco Bay Area.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/indus.png" alt="Project Indus">
+                    </div>
+                    <div class="project-title">Project Indus - Indigenous LLM Development</div>
+                    <div class="project-content">
+                        <p>
+                            Contributed to the development of an indigenous Large Language Model capable of processing and generating text in over 15 Indian languages.<br>
+                            Implemented custom data preprocessing pipelines for linguistic normalization and feature extraction.<br>
+                            Applied advanced transformer architectures for natural language understanding and generation.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/portfolio.png" alt="Portfolio Project">
+                    </div>
+                    <div class="project-title">Equity Portfolio Management Project</div>
+                    <div class="project-content">
+                        <p>
+                            Formulated data-driven equity strategies using Python's Pandas, NumPy, and Matplotlib to optimize a $5M
+                            portfolio across stocks (IBM, MSFT, GOOG, AAPL, AMZN), deploying quantitative analysis and risk
+                            modeling to maximize returns through algorithmic position sizing and performance benchmarking.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/flight_data.png" alt="Flight Data Project">
+                    </div>
+                    <div class="project-title">Flight Data Analysis with Scalability Testing</div>
+                    <div class="project-content">
+                        <p>
+                            Developed distributed computing solutions by architecting AWS-based MapReduce pipelines with Oozie
+                            orchestration, stress-testing system scalability through multiyear dataset expansions (1987-2008) while
+                            quantifying performance metrics as data volume increases.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/bank_app.png" alt="Database Management Web Application">
+                    </div>
+                    <div class="project-title">Database Management Web Application</div>
+                    <div class="project-content">
+                        <p>
+                            Engineered a lightweight, scalable web system using Flask and MySQL for core banking functions, featuring secure routing and real-time user-to-user transactions. Implemented clean separation of concerns between routing, logic, and data layers for enhanced maintainability.<br><br>
+                            Developed an administrative interface providing aggregated insights including total transaction counts, cumulative funds transferred, and user-level activity summary. Designed with enterprise-level scalability in mind, featuring modular components ready for containerization and CI/CD deployment.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/aws_pipeline.png" alt="AWS SQS Image and Text Recognition Pipeline">
+                    </div>
+                    <div class="project-title">AWS SQS Image and Text Recognition Pipeline</div>
+                    <div class="project-content">
+                        <p>
+                            Implemented a distributed, event-driven processing pipeline leveraging core AWS services including EC2, SQS, S3, and Rekognition. Engineered separate EC2 instances for image object detection and text extraction, coordinated through SQS message queues for efficient workload distribution.<br><br>
+                            Designed an asynchronous communication system between services to achieve scalability and fault tolerance. Successfully solved the challenge of coordinating stateful, resource-intensive tasks in the cloud without tight coupling, demonstrating practical implementation of cloud-native services for image processing workflows.
+                        </p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/wine_ml.png" alt="Wine Quality Prediction">
+                    </div>
+                    <div class="project-title">Wine Quality Prediction – Parallel Machine Learning on AWS</div>
+                    <div class="project-content">
+                        <p>
+                            Architected a scalable ML inference solution using distributed compute resources on AWS. Deployed Spark across a multi-node EMR cluster to train the prediction pipeline in parallel, optimizing resource utilization and minimizing training time.<br><br>
+                            Containerized the resulting model using Docker for deployment on a standalone EC2 instance, ensuring environment consistency and ease of reuse. Demonstrated practical engineering approaches for running compute-intensive workloads with high availability and operational efficiency in a cloud environment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <button class="scroll-button right" id="scrollRight">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Certifications Section -->
+        <h1 class="section-header">Certifications</h1>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Microsoft Azure Data Scientist Associate</h3>
+                <p>Certification validating expertise in applying data science and machine learning techniques on Azure.</p>
+                <p class="secondary">Issued: 2022</p>
+                <img src="images/certificates/azure_data_scientist.png" alt="Azure Data Scientist Certificate" style="width: 100%; margin-top: 16px;">
+            </div>
+            <div class="card">
+                <h3>Microsoft Azure AI Engineer Associate</h3>
+                <p>Certification demonstrating skills in implementing AI solutions using Azure Cognitive Services, Machine Learning, and knowledge mining.</p>
+                <p class="secondary">Issued: 2022</p>
+                <img src="images/certificates/azure_ai_engineer.png" alt="Azure AI Engineer Certificate" style="width: 100%; margin-top: 16px;">
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <h2 class="section-header">Get In Touch</h2>
+        
+        <!-- Contact Details with Icons -->
+        <div class="contact-details">
+            <a href="tel:+18624238830" class="contact-icon">
+                <i class="fas fa-phone"></i>
+                <span>+1 (862) 423-8830</span>
+            </a>
+            <a href="mailto:musalojidhiren@gmail.com" class="contact-icon">
+                <i class="fas fa-envelope"></i>
+                <span>musalojidhiren@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/musalojidhiren/" target="_blank" class="contact-icon">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/SaiDhiren-Musaloji" target="_blank" class="contact-icon">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+        </div>
+
+        <div class="contact-form">
+            <form id="contactForm" action="https://formspree.io/f/manogbgg" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="card" style="margin-top: 48px;">
+            <h3>Looking Forward to Connecting</h3>
+            <p>
+                I'm always open to discussing new projects, job opportunities, or collaborations. Feel free to reach out if you have any questions or just want to say hello!
+                <br><br>
+                For a quick response, email is the best way to reach me.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Image handling with local images
+        const imageConfig = {
+            profile: {
+                src: 'images/profile.png',
+                fallback: 'https://via.placeholder.com/200x200.png?text=Profile+Photo',
+                alt: 'Sai Dhiren Musaloji'
+            },
+            projects: {
+                deep_learning: {
+                    src: 'images/projects/deep_learning.png',
+                    fallback: 'https://via.placeholder.com/300x200.png?text=Deep+Learning+Project',
+                    alt: 'Deep Learning Project'
+                },
+                traffic_forecasting: {
+                    src: 'images/projects/traffic_forecasting.png',
+                    fallback: 'https://via.placeholder.com/300x200.png?text=Traffic+Forecasting+Project',
+                    alt: 'Traffic Forecasting Project'
+                },
+                indus: {
+                    src: 'images/projects/indus.png',
+                    fallback: 'https://via.placeholder.com/300x200.png?text=Project+Indus',
+                    alt: 'Project Indus'
+                },
+                portfolio: {
+                    src: 'images/projects/portfolio.png',
+                    fallback: 'https://via.placeholder.com/300x200.png?text=Portfolio+Project',
+                    alt: 'Portfolio Project'
+                },
+                flight_data: {
+                    src: 'images/projects/flight_data.png',
+                    fallback: 'https://via.placeholder.com/300x200.png?text=Flight+Data+Project',
+                    alt: 'Flight Data Project'
+                },
+                bank_app: {
+                    src: 'images/projects/database.png',
+                    fallback: 'https://via.placeholder.com/300x200.png?text=Database+Management+System',
+                    alt: 'Database Management Web Application'
+                },
+                aws_pipeline: {
+                    src: 'images/projects/sqs.png',
+                    fallback: 'https://via.placeholder.com/300x200.png?text=AWS+SQS+Pipeline',
+                    alt: 'AWS SQS Image and Text Recognition Pipeline'
+                },
+                wine_ml: {
+                    src: 'images/projects/Parallel.png',
+                    fallback: 'https://via.placeholder.com/300x200.png?text=Wine+Quality+Prediction',
+                    alt: 'Wine Quality Prediction'
+                }
+            },
+            certificates: {
+                azure_data_scientist: {
+                    src: 'images/certificates/azure_data_scientist.png',
+                    fallback: 'https://via.placeholder.com/400x300.png?text=Azure+Data+Scientist+Certificate',
+                    alt: 'Azure Data Scientist Certificate'
+                },
+                azure_ai_engineer: {
+                    src: 'images/certificates/azure_ai_engineer.png',
+                    fallback: 'https://via.placeholder.com/400x300.png?text=Azure+AI+Engineer+Certificate',
+                    alt: 'Azure AI Engineer Certificate'
+                }
+            }
+        };
+
+        // Refactored function to directly load and append image to a given element
+        function loadAndAppendImage(targetElement, config) {
+            // Clear any existing content in the targetElement (like the loading message)
+            targetElement.innerHTML = '';
+
+            const img = document.createElement('img');
+            img.alt = config.alt;
+            
+            // Add loading state directly to the targetElement
+            targetElement.innerHTML = '<div class="loading">Loading...</div>';
+            
+            // Try loading the main image
+            img.src = config.src;
+            
+            img.onload = function() {
+                console.log(`Image loaded successfully: ${config.alt}`);
+                targetElement.innerHTML = ''; // Clear loading message
+                targetElement.appendChild(img); // Append the image directly
+            };
+            
+            img.onerror = function() {
+                console.log(`Failed to load image: ${config.alt}, trying fallback...`);
+                // If main image fails, try fallback
+                img.src = config.fallback;
+                img.onerror = function() {
+                    console.log(`Fallback image also failed: ${config.alt}`);
+                    targetElement.innerHTML = `
+                        <div class="image-error">
+                            <div>
+                                <p>Image not available</p>
+                                <small>${config.alt}</small>
+                            </div>
+                        </div>
+                    `;
+                };
+            };
+        }
+
+        // Initialize images when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing images...');
+            
+            // Profile image
+            const profileContainer = document.querySelector('.profile-image');
+            if (profileContainer) {
+                console.log('Loading profile image...');
+                loadAndAppendImage(profileContainer, imageConfig.profile);
+            }
+
+            // Project images - Updated to use project titles for matching
+            const projectTitles = {
+                'Advanced Neural Network Architectures': 'deep_learning',
+                'Ensemble Traffic Forecasting System': 'traffic_forecasting',
+                'Project Indus - Indigenous LLM Development': 'indus',
+                'Equity Portfolio Management Project': 'portfolio',
+                'Flight Data Analysis with Scalability Testing': 'flight_data',
+                'Database Management Web Application': 'bank_app',
+                'AWS SQS Image and Text Recognition Pipeline': 'aws_pipeline',
+                'Wine Quality Prediction – Parallel Machine Learning on AWS': 'wine_ml'
+            };
+
+            document.querySelectorAll('.project-card').forEach((card) => {
+                const titleElement = card.querySelector('.project-title');
+                if (titleElement) {
+                    const title = titleElement.textContent.trim();
+                    const projectKey = projectTitles[title];
+                    if (projectKey && imageConfig.projects[projectKey]) {
+                        const imageContainer = card.querySelector('.project-image');
+                        if (imageContainer) {
+                            console.log(`Loading project image for: ${title}`);
+                            loadAndAppendImage(imageContainer, imageConfig.projects[projectKey]);
+                        }
+                    }
+                }
+            });
+
+            // Certificate images
+            document.querySelectorAll('.card').forEach((card, index) => {
+                const existingImg = card.querySelector('img');
+                if (existingImg) {
+                    const certKey = Object.keys(imageConfig.certificates)[index];
+                    if (certKey) {
+                        console.log(`Loading certificate image: ${certKey}`);
+                        loadAndAppendImage(existingImg.parentElement, imageConfig.certificates[certKey]);
+                    }
+                }
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitButton = this.querySelector('.submit-button');
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            // Disable submit button and show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            try {
+                const response = await fetch('https://formspree.io/f/manogbgg', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert('Thank you for your message! I\'ll get back to you soon.');
+                    this.reset();
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Sorry, there was an error sending your message. Please try again later.');
+            } finally {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+            }
+        });
+
+        // View counter functionality
+        async function updateViewCount() {
+            try {
+                const response = await fetch('https://api.github.com/repos/SaiDhiren-Musaloji/portfolio/issues?labels=view-counter&state=open', {
+                    headers: {
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                const issues = await response.json();
+                if (issues.length > 0) {
+                    const viewCount = issues[0].body.match(/Current view count: (\d+)/)[1];
+                    document.getElementById('viewCounter').textContent = `Views: ${viewCount}`;
+                }
+            } catch (error) {
+                console.error('Error updating view count:', error);
+                document.getElementById('viewCounter').textContent = 'Views: Error';
+            }
+        }
+
+        // Update view count when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            updateViewCount();
+        });
+
+        // Page View Tracker
+        class PageViewTracker {
+            constructor() {
+                this.visitorInfo = {
+                    timestamp: new Date().toISOString(),
+                    userAgent: navigator.userAgent,
+                    language: navigator.language,
+                    screenResolution: `${window.screen.width}x${window.screen.height}`,
+                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                    referrer: document.referrer || 'Direct',
+                    pageUrl: window.location.href,
+                    viewDuration: 0
+                };
+                
+                this.startTime = Date.now();
+                this.setupTracking();
+            }
+
+            setupTracking() {
+                // Track when user leaves the page
+                window.addEventListener('beforeunload', () => {
+                    this.visitorInfo.viewDuration = Math.floor((Date.now() - this.startTime) / 1000);
+                    this.logVisit();
+                });
+
+                // Track page visibility changes
+                document.addEventListener('visibilitychange', () => {
+                    if (document.visibilityState === 'hidden') {
+                        this.visitorInfo.viewDuration = Math.floor((Date.now() - this.startTime) / 1000);
+                        this.logVisit();
+                    }
+                });
+
+                // Track mouse movements to detect engagement
+                let mouseMoves = 0;
+                document.addEventListener('mousemove', () => {
+                    mouseMoves++;
+                    if (mouseMoves === 1) {
+                        this.visitorInfo.engaged = true;
+                    }
+                });
+
+                // Track scroll depth
+                let maxScroll = 0;
+                window.addEventListener('scroll', () => {
+                    const scrollPercent = Math.round((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100);
+                    maxScroll = Math.max(maxScroll, scrollPercent);
+                    this.visitorInfo.scrollDepth = maxScroll;
+                });
+            }
+
+            async logVisit() {
+                try {
+                    // Create a formatted log message
+                    const logMessage = `
+New Visit:
+Time: ${this.visitorInfo.timestamp}
+Duration: ${this.visitorInfo.viewDuration} seconds
+Device: ${this.visitorInfo.userAgent}
+Language: ${this.visitorInfo.language}
+Screen: ${this.visitorInfo.screenResolution}
+Timezone: ${this.visitorInfo.timezone}
+Referrer: ${this.visitorInfo.referrer}
+URL: ${this.visitorInfo.pageUrl}
+Scroll Depth: ${this.visitorInfo.scrollDepth || 0}%
+Engaged: ${this.visitorInfo.engaged ? 'Yes' : 'No'}
+----------------------------------------
+`;
+
+                    // Log to console for development
+                    console.log(logMessage);
+
+                    // Create a GitHub Issue with the visit information
+                    await fetch('https://api.github.com/repos/SaiDhiren-Musaloji/portfolio/issues', {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/vnd.github.v3+json',
+                            'Content-Type': 'application/json',
+                            'Authorization': 'token ' + process.env.GITHUB_TOKEN
+                        },
+                        body: JSON.stringify({
+                            title: `Page Visit - ${new Date().toLocaleDateString()}`,
+                            body: logMessage,
+                            labels: ['page-visit']
+                        })
+                    });
+                } catch (error) {
+                    console.error('Error logging visit:', error);
+                }
+            }
+        }
+
+        // Initialize the tracker when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new PageViewTracker();
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollContainer = document.getElementById('projectScrollContainer');
+            const scrollLeftBtn = document.getElementById('scrollLeft');
+            const scrollRightBtn = document.getElementById('scrollRight');
+
+            // Scroll amount (adjust as needed)
+            const scrollAmount = 400;
+            let isScrolling = false;
+
+            // Function to handle smooth scrolling
+            function smoothScroll(direction) {
+                if (isScrolling) return;
+                isScrolling = true;
+
+                const currentScroll = scrollContainer.scrollLeft;
+                const targetScroll = direction === 'left' ? 
+                    currentScroll - scrollAmount : 
+                    currentScroll + scrollAmount;
+
+                scrollContainer.scrollTo({
+                    left: targetScroll,
+                    behavior: 'smooth'
+                });
+
+                // Reset scrolling state after animation
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 500);
+            }
+
+            // Button click handlers
+            scrollLeftBtn.addEventListener('click', () => {
+                smoothScroll('left');
+            });
+
+            scrollRightBtn.addEventListener('click', () => {
+                smoothScroll('right');
+            });
+
+            // Show/hide buttons based on scroll position
+            function updateScrollButtons() {
+                scrollLeftBtn.style.display = scrollContainer.scrollLeft > 0 ? 'flex' : 'none';
+                scrollRightBtn.style.display = 
+                    scrollContainer.scrollLeft < (scrollContainer.scrollWidth - scrollContainer.clientWidth) 
+                    ? 'flex' : 'none';
+            }
+
+            // Update button visibility on scroll
+            scrollContainer.addEventListener('scroll', updateScrollButtons);
+            window.addEventListener('resize', updateScrollButtons);
+            updateScrollButtons(); // Initial check
+        });
+    </script>
+</body>
+</html> 
