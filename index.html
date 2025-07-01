@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhiren</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/jcb1pdv.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Aleo:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        :root {
+            --primary: #181c2f;
+            --secondary: #fff;
+            --accent: #2d3a8c;
+            --text: #181c2f;
+            --muted: #6c7a97;
+            --font-main: 'leida-light', 'Montserrat', 'Inter', 'Segoe UI', Arial, sans-serif;
+        }
+        html, body, * {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-main);
+            background: var(--secondary);
+            color: var(--text);
+        }
+        body {
+            min-height: 100vh;
+        }
+        .custom-header {
+            width: 100vw;
+            background: #fff;
+            box-shadow: none;
+            border: none;
+            font-family: var(--font-main);
+            position: relative;
+            z-index: 10;
+        }
+        .header-row {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .header-main-row {
+            justify-content: flex-start;
+            min-height: 60px;
+            border-bottom: none;
+            padding-top: 18px;
+            padding-bottom: 8px;
+            padding-left: 0;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-left: 0;
+            padding-left: 24px;
+        }
+        .logo-link img {
+            display: block;
+            border-radius: 50%;
+        }
+        .header-name {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #181c2f;
+            text-decoration: none;
+            font-family: var(--font-main);
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+        .header-nav-row {
+            justify-content: flex-start;
+            min-height: 40px;
+            background: #fdf9f9;
+            position: relative;
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding-left: 90px;
+        }
+        .header-nav {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .nav-list {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-list li a {
+            color: #181c2f;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.98rem;
+            font-family: var(--font-main);
+            transition: color 0.2s;
+            padding: 4px 18px;
+            display: block;
+        }
+        .nav-list li a:hover {
+            color: #2d3a8c;
+        }
+        .header-socials {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-left: auto;
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .header-socials a {
+            color: #181c2f;
+            font-size: 1.25rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+        }
+        .header-socials a:hover {
+            color: #2d3a8c;
+        }
+        .header-socials a[aria-label="LinkedIn"] {
+            color: #0077b5;
+        }
+        .header-socials a[aria-label="GitHub"] {
+            color: #181717;
+        }
+        .header-socials a[aria-label="LinkedIn"]:hover,
+        .header-socials a[aria-label="GitHub"]:hover {
+            opacity: 0.8;
+        }
+        @media (max-width: 900px) {
+            .header-row {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 12px;
+            }
+            .header-nav-row {
+                max-width: 100vw;
+                padding-left: 32px;
+            }
+            .header-nav {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            .nav-list {
+                gap: 18px;
+            }
+            .header-socials {
+                right: 12px;
+            }
+        }
+        @media (max-width: 700px) {
+            .header-row {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 4vw;
+            }
+            .header-nav-row {
+                max-width: 100vw;
+                padding-left: 8px;
+            }
+            .header-nav {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            .nav-list {
+                gap: 10px;
+            }
+            .header-socials {
+                right: 4vw;
+            }
+        }
+        .hero, .about-row {
+            display: flex;
+            width: 100vw;
+            height: 85vh;
+            margin: 0;
+            padding: 0;
+            align-items: stretch;
+        }
+        .hero-img, .about-img, .hero-text, .about-text {
+            width: 50vw;
+            height: 100%;
+            min-width: 0;
+            min-height: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eaeaea;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .hero-img img, .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            border-radius: 0;
+            box-shadow: none;
+            background: #eaeaea;
+        }
+        .hero-text, .about-text {
+            width: 50vw;
+            height: 100%;
+            min-width: 0;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .hero-text {
+            background: #fff;
+            color: #181c2f;
+            font-family: var(--font-main);
+        }
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0 0 12px 0;
+            text-align: center;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #6c7a97;
+            margin: 0 0 24px 0;
+            text-align: center;
+        }
+        .about-row {
+            display: flex;
+            width: 100vw;
+            height: 110vh;
+            margin: 0;
+            padding: 0;
+            align-items: stretch;
+        }
+        .about-text, .about-img {
+            width: 50vw;
+            height: 100%;
+            min-width: 0;
+            min-height: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        .about-text {
+            background: #22345a;
+            color: #fff;
+            font-family: var(--font-main);
+            padding: 24px 8vw;
+            box-sizing: border-box;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .about-text h2 {
+            font-size: 40px;
+            line-height: 1.35;
+            text-align: center;
+            font-weight: bold;
+            margin: 0 0 24px 0;
+        }
+        .about-text p {
+            font-size: 15px;
+            line-height: 1.875;
+            text-align: center;
+            margin: 0 0 12px 0;
+        }
+        .about-img {
+            background: #eaeaea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .about-img img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            border-radius: 0;
+            box-shadow: none;
+            background: #eaeaea;
+        }
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: var(--primary);
+        }
+        .experience-section {
+            width: 100vw;
+            background: #fff;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .experience-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 48px 0 24px 0;
+            color: #181c2f;
+        }
+        .exp-card {
+            background: #181c2f;
+            color: #e6e6ea;
+            box-shadow: 0 2px 12px rgba(24,28,47,0.10);
+            margin: 0 auto 48px auto;
+            padding: 40px 38px;
+            max-width: 800px;
+            width: 90vw;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .exp-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #e6e6ea;
+            margin-bottom: 8px;
+        }
+        .exp-company {
+            font-size: 1.1rem;
+            color: #bfc8e6;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .exp-dates {
+            font-size: 0.98rem;
+            color: #bfc8e6;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+        .exp-list {
+            margin: 0 0 0 18px;
+            padding: 0;
+            color: #e6e6ea;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .projects-section {
+            width: 100vw;
+            background: #fff;
+            padding: 0;
+            margin: 0;
+        }
+        .projects-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 48px 0 24px 0;
+            color: #181c2f;
+        }
+        .projects-cards-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto 48px auto;
+            padding: 0 24px;
+        }
+        .projects-section .exp-card {
+            background: none;
+            color: #181c2f;
+            box-shadow: 0 2px 12px rgba(24,28,47,0.10);
+            margin: 0;
+            padding: 32px 28px;
+            max-width: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border-radius: 0;
+        }
+        .projects-section .exp-title {
+            color: #181c2f;
+        }
+        .projects-section .exp-company {
+            color: #2d3a8c;
+        }
+        .projects-section .exp-list {
+            color: #181c2f;
+        }
+        @media (max-width: 900px) {
+            .projects-cards-container {
+                grid-template-columns: 1fr;
+                padding: 0 8px;
+            }
+        }
+        .contact-section {
+            text-align: center;
+            padding: 64px 0 32px 0;
+        }
+        .contact-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--secondary);
+            border-radius: 24px;
+            box-shadow: 0 2px 12px rgba(24,28,47,0.06);
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 12px 14px;
+            font-size: 1rem;
+            font-family: var(--font-main);
+        }
+        .contact-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .contact-form button {
+            background: var(--primary);
+            color: var(--secondary);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-form button:hover {
+            background: var(--accent);
+        }
+        @media (max-width: 1100px) {
+            .hero, .about-row {
+            flex-direction: column;
+                width: 100vw;
+                height: auto;
+                min-height: unset;
+                max-height: unset;
+            }
+            .hero-img, .about-img, .hero-text, .about-text {
+                width: 100vw;
+                height: 40vh;
+                min-width: 0;
+                min-height: 0;
+                padding: 0;
+            }
+            .about-img, .about-img img {
+                width: 100vw;
+                max-width: 100vw;
+                height: 400px;
+                max-height: 400px;
+            }
+            .about-text {
+                height: auto;
+                padding: 32px 6vw;
+            }
+        }
+        @media (max-width: 600px) {
+            .header-container {
+                flex-direction: column;
+                gap: 12px;
+                padding: 0 8px;
+            }
+            .section {
+                padding: 32px 8px;
+            }
+            .exp-card {
+                padding: 18px 8px;
+            }
+            .contact-form {
+                padding: 18px 8px;
+            }
+        }
+        /* Headings use Segoe UI Regular */
+        h1, h2, h3, .experience-title, .exp-title, .projects-title, .section-title {
+            font-family: 'Segoe UI', Arial, sans-serif !important;
+            font-weight: 400 !important;
+        }
+        .education-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 400;
+            margin: 48px 0 24px 0;
+            color: #181c2f;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .education-section {
+            width: 100vw;
+            background: #f8f9fa;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .education-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            max-width: 800px;
+            margin: 0 auto 48px auto;
+            padding: 0;
+            width: 90vw;
+        }
+        .education-section .edu-card {
+            background: #fff;
+            color: #181c2f;
+            box-shadow: 0 2px 12px rgba(24,28,47,0.10);
+            margin: 0;
+            padding: 40px 38px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border-radius: 0;
+        }
+        .education-section .edu-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #181c2f;
+            margin-bottom: 8px;
+        }
+        .education-section .edu-degree {
+            font-size: 1.1rem;
+            color: #2d3a8c;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .education-section .edu-dates {
+            font-size: 0.98rem;
+            color: #6c7a97;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+        .education-section .edu-list {
+            margin: 0 0 0 18px;
+            color: #181c2f;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        @media (max-width: 700px) {
+            .education-cards-container {
+                padding: 0 8px;
+            }
+        }
+        .certification-section {
+            width: 100vw;
+            background: #fff;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .certification-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 400;
+            margin: 48px 0 24px 0;
+            color: #181c2f;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .certification-cards-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto 48px auto;
+            padding: 0 24px;
+        }
+        .certification-section .cert-card {
+            background: #181c2f;
+            color: #e6e6ea;
+            box-shadow: 0 2px 12px rgba(24,28,47,0.10);
+            margin: 0;
+            padding: 40px 38px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border-radius: 0;
+        }
+        .certification-section .cert-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #e6e6ea;
+            margin-bottom: 8px;
+        }
+        .certification-section .cert-issuer {
+            font-size: 1.1rem;
+            color: #bfc8e6;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .certification-section .cert-image {
+            text-align: center;
+        }
+        .certification-section .cert-image img {
+            max-width: 80%;
+            height: auto;
+        }
+        @media (max-width: 900px) {
+            .certification-cards-container {
+                grid-template-columns: 1fr;
+                padding: 0 8px;
+            }
+        }
+        .download-resume-section {
+            text-align: center;
+            padding: 48px 0;
+            background: #fff;
+        }
+        .download-resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #2d3a8c 0%, #4a5fc1 100%);
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: var(--font-main);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(45, 58, 140, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        .download-resume-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(45, 58, 140, 0.4);
+            background: linear-gradient(135deg, #4a5fc1 0%, #2d3a8c 100%);
+        }
+        .download-resume-btn i {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <header id="SITE_HEADER" class="custom-header" tabindex="-1">
+      <div class="header-row header-main-row">
+        <div class="header-left">
+          <a href="#home" class="logo-link">
+            <img src="images/Logo2.png" alt="Logo" width="40" height="40" style="object-fit:contain;">
+          </a>
+          <a href="#home" class="header-name">Sai Dhiren Musaloji</a>
+        </div>
+      </div>
+      <div class="header-row header-nav-row">
+        <nav class="header-nav">
+          <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certification">Certification</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+          </ul>
+        </nav>
+        <div class="header-socials">
+          <a href="https://www.linkedin.com/in/musalojidhiren/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/SaiDhiren-Musaloji" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-img">
+                <img src="images/profile.png" alt="Dhiren profile photo (placeholder)">
+                </div>
+                <div class="hero-text">
+                <h1>Hey,<br>I am Dhiren</h1>
+                    <p>Data Scientist | AI Engineer | Cloud AI Specialist</p>
+            </div>
+        </section>
+        <section class="about-row" id="about">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    I am a graduate student in Data Science with a strong foundation in artificial intelligence, machine learning, and cloud-native systems. My academic journey at the New Jersey Institute of Technology has equipped me with advanced skills in statistical learning, deep learning, and scalable data engineering. I am passionate about building robust, ethical AI solutions that address real-world challenges, especially in multilingual and underrepresented domains.
+                </p>
+                <p>
+                    My experience includes developing and deploying high-throughput AI models, optimizing distributed systems, and collaborating on large-scale projects such as Project Indus—a multilingual Large Language Model for Indian languages. I am committed to continuous learning and enjoy translating complex data problems into actionable insights that drive innovation and impact.
+            </p>
+        </div>
+            <div class="about-img">
+                <img src="images/pic 2.jpg" alt="About Dhiren">
+        </div>
+        </section>
+        <section class="experience-section" id="experience">
+            <div class="experience-title">EXPERIENCE</div>
+            <div class="exp-card">
+                <div class="exp-title">AI Research Intern</div>
+                <div class="exp-company">Tech Mahindra, Makers Lab | Pune, India</div>
+                <div class="exp-dates">Oct 2023 - Jan 2024</div>
+                <ul class="exp-list">
+                    <li>Contributed to Project Indus, a national initiative to develop a Large Language Model supporting over 15 Indian languages.</li>
+                    <li>Developed and optimized data preprocessing pipelines for tokenization, normalization, and character embedding in low-resource dialects.</li>
+                    <li>Benchmarked transformer models using metrics like perplexity, BLEU, and F1 to evaluate performance on complex language tasks.</li>
+                    <li>Collaborated with cross-functional teams to promote ethical AI practices and model alignment for underrepresented communities.</li>
+                </ul>
+            </div>
+            <div class="exp-card">
+                <div class="exp-title">Cloud Computing Intern</div>
+                <div class="exp-company">LTIMindtree | Hyderabad, Telangana, India</div>
+                <div class="exp-dates">Feb 2023 - Apr 2023</div>
+                <ul class="exp-list">
+                    <li>Gained comprehensive knowledge of cloud computing fundamentals, focusing on Amazon Web Services (AWS).</li>
+                    <li>Accelerated data processing workflows using EC2, S3, Lambda, VPC, and RDS, alongside Docker, Kubernetes, and Terraform.</li>
+                    <li>Participated in cloud migration and big data processing initiatives, optimizing resource allocation and cost-efficiency.</li>
+                    <li>Developed hands-on expertise in infrastructure-as-code (IaC), container orchestration, and DevOps best practices.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="education-section" id="education">
+            <div class="education-title">EDUCATION</div>
+            <div class="education-cards-container">
+                <div class="edu-card">
+                    <div class="edu-title">New Jersey Institute of Technology</div>
+                    <div class="edu-degree">MS in Data Science</div>
+                    <div class="edu-dates">Jan 2024 - May 2025</div>
+                    <ul class="edu-list">
+                        <li>GPA: 3.85/4</li>
+                    </ul>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-title">Mahatma Gandhi Institute of Technology</div>
+                    <div class="edu-degree">B.Tech in Electronics and Communication Engineering</div>
+                    <div class="edu-dates">Jun 2019 - Apr 2023</div>
+                    <ul class="edu-list">
+                        <li>GPA: 7/10</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="projects-section" id="projects">
+            <div class="projects-title">PROJECTS</div>
+            <div class="projects-cards-container">
+                <div class="exp-card">
+                    <div class="exp-title">Advanced Generative and Reinforcement Learning Systems</div>
+                    <ul class="exp-list">
+                        <li>Constructed diffusion-based generative models and adversarial networks for synthetic image generation under stochastic constraints.</li>
+                        <li>Leveraged parallel computing strategies to optimize model convergence time.</li>
+                        <li>Fine-tuned transformer-based architectures (e.g., BERT) and applied actor-critic and policy gradient-based RL agents for language modeling and control tasks.</li>
+                        <li>Evaluated performance using F1, BLEU, ROUGE, and RL-specific reward metrics, achieving a 12% gain on standard benchmarks.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-title">Spatiotemporal Forecasting of Urban Traffic Networks</div>
+                    <ul class="exp-list">
+                        <li>Engineered a fusion architecture combining ARIMA, LSTM, and GNN models to capture temporal trends and topological interactions.</li>
+                        <li>Applied PCA and t-SNE for dimensionality reduction on data from 325 sensors in the PEMS-BAY dataset.</li>
+                        <li>Assessed system robustness across multi-horizon prediction intervals under varying traffic conditions.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-title">Multilingual NLP Development for Indigenous Languages</div>
+                    <ul class="exp-list">
+                        <li>Engineered NLP pipelines for underrepresented Indian languages, enhancing linguistic coverage and model generalizability.</li>
+                        <li>Deployed hybrid regular expression-based classification to sanitize over 1TB of data, reducing toxic content by 20%.</li>
+                        <li>Maintained documentation and delivered technical briefings to support reproducibility and enterprise integration.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-title">High-Availability Financial Analytics System</div>
+                    <ul class="exp-list">
+                        <li>Developed a transactional analytics platform for real-time banking operations, focusing on fraud detection and high concurrency.</li>
+                        <li>Designed a responsive dashboard with anomaly detection and time-series mapping.</li>
+                        <li>Containerized the system using Docker and implemented CI/CD pipelines for deployment.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-title">Distributed Recognition Engine Using Cloud-Native Paradigms</div>
+                    <ul class="exp-list">
+                        <li>Built an asynchronous image and text recognition pipeline using AWS EC2, SQS, S3, and Rekognition.</li>
+                        <li>Ensured 99.9% uptime using stateless compute strategies, visibility timeout calibration, and retry mechanisms.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-title">Parallelized ML Pipeline for Oenological Forecasting</div>
+                    <ul class="exp-list">
+                        <li>Created a Spark-based distributed system on AWS EMR for wine quality prediction.</li>
+                        <li>Improved training speed by 60% through partitioned data and in-memory caching.</li>
+                        <li>Enabled high-throughput inference with autoscaling, alerting, and performance logging.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-title">Flight Data Analysis with Scalability Testing</div>
+                    <ul class="exp-list">
+                        <li>Developed AWS-based MapReduce pipelines orchestrated with Apache Oozie for distributed flight data processing.</li>
+                        <li>Quantified performance metrics as data volume increased across multi-year datasets from 1987 to 2008.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-title">Equity Portfolio Management</div>
+                    <ul class="exp-list">
+                        <li>Formulated data-driven equity strategies using Python libraries (Pandas, NumPy, Matplotlib) to optimize a $5M portfolio.</li>
+                        <li>Deployed quantitative analysis and risk modeling techniques for algorithmic position sizing and performance benchmarking.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="certification-section" id="certification">
+            <div class="certification-title">CERTIFICATION</div>
+            <div class="certification-cards-container">
+                <div class="cert-card">
+                    <div class="cert-title">Azure AI Engineer Associate</div>
+                    <div class="cert-issuer">Microsoft Azure</div>
+                    <div class="cert-image">
+                        <img src="images/certificates/azure_ai_engineer.png" alt="Azure AI Engineer Certificate">
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-title">Azure Data Scientist Associate</div>
+                    <div class="cert-issuer">Microsoft Azure</div>
+                    <div class="cert-image">
+                        <img src="images/certificates/azure_data_scientist.png" alt="Azure Data Scientist Certificate">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="download-resume-section">
+            <a href="resume.pdf" download class="download-resume-btn">
+                <i class="fas fa-download"></i>
+                Download Resume
+            </a>
+        </section>
+        <section class="section contact-section" id="contact">
+            <h2>Get in Touch</h2>
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="Name *" required>
+                <input type="email" name="email" placeholder="Email *" required>
+                <input type="text" name="subject" placeholder="Subject *" required>
+                <textarea name="message" placeholder="Message *" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer style="text-align:center; color:#6c7a97; font-size:0.95rem; padding:24px 0 12px 0;">
+        ©2024 by Dhiren
+    </footer>
+</body>
+</html> 
